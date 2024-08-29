@@ -1,0 +1,16 @@
+{
+  "name": "to-do-list",
+  "version": "1.0.0",
+  "description": "Tas managing app",
+  "main": "index.js",
+  "scripts": {
+    "dev": "dead-server --host=localhost --port=2110",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dead-server": "^1.0.9"
+  }
+}
