@@ -4,7 +4,7 @@ _website design project_
 
 <br>
 
-## 🎅 Authors
+## 🎅 Author
 
 Justinas Pakalnis
 
