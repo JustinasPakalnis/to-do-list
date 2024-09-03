@@ -1,0 +1,43 @@
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: rgb(252, 230, 196);
+  box-shadow: 0 0.2rem 0.4rem rgb(150, 150, 150);
+}
+
+.main-header > .logo {
+  height: 3rem;
+}
+.main-header > .stats {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.main-header .detail {
+  display: flex;
+  font-size: 1rem;
+  align-items: baseline;
+}
+
+.main-header .label {
+  display: none;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+.main-header .value {
+  font-family: "New Amsterdam", sans-serif;
+  font-weight: normal;
+  font-size: 1.3rem;
+}
+@media (min-width: 36rem) {
+  .main-header .label {
+    display: block;
+  }
+}
