@@ -1,5 +1,6 @@
 @import "../css/components/header.css";
 @import "../css/components/footer.css";
+@import "../css/components/form-create.css";
 body,
 body * {
   margin: 0;

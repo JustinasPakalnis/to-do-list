@@ -62,11 +62,39 @@
     </header>
 
     <main>
-      <section>Task form content</section>
+      <section data-visible="true">
+        <form class="form-create">
+          <div class="clumns">
+            <fieldset class="form-row">
+              <label class="label" for="task">Task</label>
+              <input class="input" id="task" type="text" required />
+            </fieldset>
+            <fieldset class="form-row">
+              <label class="label" for="deadline">Deadline</label>
+              <input
+                class="input"
+                id="deadline"
+                type="date"
+                min="2024-09-03"
+                value="2024-09-03"
+                required
+              />
+            </fieldset>
+          </div>
+
+          <fieldset class="form-row">
+            <label class="input" class="label" for="color">Color</label>
+            <input id="color" type="color" required />
+            <button class="btn" type="reset">Cancel</button>
+            <button class="btn" type="sumbit">Create</button>
+          </fieldset>
+        </form>
+      </section>
+
       <section>Task list Content</section>
     </main>
 
-    <footer class="main-footer">Cipyright &copy; ir</footer>
+    <footer class="main-footer">Cipyright &copy; ir nerights</footer>
     <script type="module" src="./js/main.js"></script>
   </body>
 </html>
