@@ -6,7 +6,7 @@
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: rgb(252, 230, 196);
+  background-color: rgb(253, 232, 253);
   box-shadow: 0 0.2rem 0.4rem rgb(150, 150, 150);
 }
 
@@ -35,8 +35,16 @@
   font-weight: normal;
   font-size: 1.3rem;
 }
-@media (min-width: 36rem) {
+.main-header .btn > .icon + .text {
+  display: none;
+}
+@media (min-width: 50rem) {
   .main-header .label {
     display: block;
+  }
+}
+@media (min-width: 30rem) {
+  .main-header .btn > .icon + .text {
+    display: inline;
   }
 }

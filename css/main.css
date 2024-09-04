@@ -2,6 +2,7 @@
 @import "../css/components/footer.css";
 @import "../css/components/form-create.css";
 @import "../css/components/list.css";
+@import "../css/components/btn.css";
 body,
 body * {
   margin: 0;
