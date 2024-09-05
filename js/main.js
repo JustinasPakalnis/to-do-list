@@ -1,38 +1,57 @@
-//lightbox
-const newTaskBtnDOM = document.querySelector(".main-header");
+const newTaskBtnDOM = document.querySelector(".main-header .btn");
 const lightboxDOM = document.querySelector(".lightbox");
 const lightboxCloseDOM = lightboxDOM.querySelector(".close");
 const lightboxBackgroundDOM = lightboxDOM.querySelector(".background");
-newTaskBtnDOM.addEventListener("click", () => {
-  lightboxDOM.dataset.visible = true;
-});
-lightboxCloseDOM.addEventListener("click", () => {
-  lightboxDOM.dataset.visible = false;
-});
-lightboxBackgroundDOM.addEventListener("click", () => {
-  lightboxDOM.dataset.visible = false;
-});
-window.addEventListener("keyup", (e) => {
-  if (e.key === "Escape") {
-    lightboxDOM.dataset.visible = false;
-  }
-});
-//task menu
 const allTaskDOMs = document.querySelectorAll(".task");
-let isMeniuOpen = false;
+const taskMenuBackgroundDOM = document.querySelector(".task-menu-background");
+let lastOpenMenuTaskIndex = -1;
 
-for (const taskDOM of allTaskDOMs) {
-  const moreDOM = taskDOM.querySelector(".more");
-  const moreActionsDOM = taskDOM.querySelector(".more-actions");
-  if (moreDOM) {
-    moreDOM.addEventListener("click", () => {
-      moreActionsDOM.dataset.visible = "true";
-    });
-  }
+function openLightbox() {
+  lightboxDOM.dataset.visible = "true";
 }
 
-window.addEventListener("click", () => {
-  for (const taskDOM of allTaskDOMs) {
-    taskDOM.querySelector(".more-actions").dataset.visible = "false;";
+function closeLightbox() {
+  lightboxDOM.dataset.visible = "false";
+}
+
+function closeTaskMenu() {
+  if (lastOpenMenuTaskIndex >= 0) {
+    allTaskDOMs[lastOpenMenuTaskIndex].querySelector(
+      ".more-actions"
+    ).dataset.visible = "false";
+  }
+  taskMenuBackgroundDOM.classList.remove("active");
+}
+
+for (let i = 0; i < allTaskDOMs.length; i++) {
+  const taskDOM = allTaskDOMs[i];
+  const moreDOM = taskDOM.querySelector(".more");
+  const moreActionsDOM = taskDOM.querySelector(".more-actions");
+
+  moreDOM.addEventListener("click", () => {
+    if (lastOpenMenuTaskIndex === i) {
+      moreActionsDOM.dataset.visible = "false";
+      taskMenuBackgroundDOM.classList.remove("active");
+      lastOpenMenuTaskIndex = -1;
+    } else {
+      closeTaskMenu();
+
+      moreActionsDOM.dataset.visible = "true";
+      taskMenuBackgroundDOM.classList.add("active");
+      lastOpenMenuTaskIndex = i;
+    }
+  });
+}
+
+newTaskBtnDOM.addEventListener("click", openLightbox);
+newTaskBtnDOM.addEventListener("click", closeTaskMenu);
+lightboxCloseDOM.addEventListener("click", closeLightbox);
+lightboxBackgroundDOM.addEventListener("click", closeLightbox);
+taskMenuBackgroundDOM.addEventListener("click", closeTaskMenu);
+
+window.addEventListener("keyup", (e) => {
+  if (e.key === "Escape") {
+    closeLightbox();
+    closeTaskMenu();
   }
 });

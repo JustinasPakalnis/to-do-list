@@ -1,7 +1,7 @@
 .lightbox {
   position: fixed;
   inset: 0;
-  z-index: 3;
+  z-index: 20;
 }
 .lightbox[data-visible="false"] {
   display: none;
@@ -68,12 +68,15 @@ input[type="color" i]::-webkit-color-swatch-wrapper {
   position: absolute;
   top: 0;
   right: 0;
-  transform: translate(50%, -50%);
-  width: 3rem;
-  height: 3rem;
-  line-height: 2.7rem;
-  border-radius: 50%;
-  background-color: #fff;
-  text-align: center;
-  box-shadow: 0 0.4rem 0.8rem #0005;
+  height: 32px;
+  width: 32px;
+  transition: 0.2s;
+}
+.form-create .close svg {
+  height: 32px;
+  width: 32px;
+}
+.form-create .close:hover {
+  background-color: rgba(206, 206, 206, 0.333);
+  cursor: pointer;
 }

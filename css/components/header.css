@@ -8,7 +8,7 @@
   width: 100%;
   background-color: rgb(253, 232, 253);
   box-shadow: 0 0.2rem 0.4rem rgb(150, 150, 150);
-  z-index: 2;
+  z-index: 3;
 }
 
 .main-header > .logo {

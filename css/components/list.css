@@ -45,10 +45,12 @@
   height: 1.5rem;
   line-height: 1rem;
   text-align: center;
+  background-color: #fff;
   border: 0.1rem solid #ccc;
   border-radius: 0.3rem;
   cursor: pointer;
   user-select: none;
+  z-index: 1;
 }
 .task > .header > .more:hover {
   background-color: #ccc;
@@ -59,10 +61,10 @@
   position: absolute;
   top: 1.5rem;
   right: 0;
+  z-index: 2;
   padding: 0.5em 0;
   background-color: #eee;
   box-shadow: 0 0.2rem 0.5rem #0005;
-  z-index: 1;
 }
 .task .more-actions > button {
   background-color: transparent;
@@ -81,6 +83,18 @@
 .task > .content {
 }
 .task > .footer {
+}
+
+.task-menu-background {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background-color: #f003;
+  /* background-color: transparent; */
+}
+.task-menu-background.active {
+  display: block;
 }
 
 @media (min-width: 48rem) {
